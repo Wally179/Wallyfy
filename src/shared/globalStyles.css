@@ -15,3 +15,6 @@
 ::-webkit-scrollbar {
   width: 0px;
 }
+.flex {
+  display: flex;
+}
