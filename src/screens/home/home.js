@@ -35,7 +35,7 @@ export default function Home() {
         <Sidebar />
 
         <Routes>
-          <Route path="/" element={<Library />} />
+          <Route path="/Wallyfy" element={<Library />} />
           <Route path="/feed" element={<Feed />} />
           <Route path="/trend" element={<Trend />} />
           <Route path="/player" element={<Player />} />

@@ -28,10 +28,10 @@ export default function Sidebar() {
           to="/favorites"
           icon={<MdFavorite />}
         />
-        <Sidebarbutton title="Biblioteca" to="/" icon={<IoLibrary />} />
+        <Sidebarbutton title="Biblioteca" to="/Wallyfy" icon={<IoLibrary />} />
       </div>
       <div onClick={logout}>
-        <Sidebarbutton title="Sair" to="/" icon={<FaSignOutAlt />} />
+        <Sidebarbutton title="Sair" to="/Wallyfy" icon={<FaSignOutAlt />} />
       </div>
     </div>
   );
