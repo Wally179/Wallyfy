@@ -6,7 +6,7 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { IoLibrary } from "react-icons/io5";
 import { MdSpaceDashboard } from "react-icons/md";
 import Sidebarbutton from "../sidebarButton/sidebarbutton";
-import apiClient from "../../spotify";
+import apiClient, { logout } from "../../spotify";
 export default function Sidebar() {
   const [image, setImage] = useState(
     "https://i.pinimg.com/originals/c6/98/11/c69811cde42686f38c7b728691eb88a4.jpg"
@@ -30,7 +30,9 @@ export default function Sidebar() {
         />
         <Sidebarbutton title="Biblioteca" to="/" icon={<IoLibrary />} />
       </div>
-      <Sidebarbutton title="Sair" to="" icon={<FaSignOutAlt />} />
+      <div onClick={logout}>
+        <Sidebarbutton title="Sair" to="/" icon={<FaSignOutAlt />} />
+      </div>
     </div>
   );
 }

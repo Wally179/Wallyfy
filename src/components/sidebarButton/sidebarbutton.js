@@ -7,7 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 export default function Sidebarbutton(props) {
   const location = useLocation();
 
-  const isActive = location.pathname === props.to;
+  const isActive = location.pathname === props.to && props.title !== "Sair";
 
   const btnClass = isActive ? "btn-body active" : "btn-body";
   return (

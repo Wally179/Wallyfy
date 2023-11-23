@@ -1,6 +1,17 @@
 .screen-container {
-  width: calc(100%);
+  width: calc(100% - 100px);
   height: 100%;
-  background-color: #1a323e;
   border-radius: 30px;
+  overflow: scroll;
+  background-color: #2b3784;
+  opacity: 1;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #2b3784 60px
+    ),
+    repeating-linear-gradient(#1a323e55, #1a323e);
+}
+::-webkit-scrollbar {
+  width: 0px;
 }

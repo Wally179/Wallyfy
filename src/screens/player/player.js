@@ -1,5 +1,6 @@
 import React from "react";
+import "./player.css";
 
 export default function Player() {
-  return <div>P</div>;
+  return <div className="screen-container flex"></div>;
 }

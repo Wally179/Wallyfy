@@ -20,4 +20,19 @@ export const setClientToken = (token) => {
   });
 };
 
+export const logout = () => {
+  localStorage.removeItem("access_token");
+  localStorage.removeItem("token");
+  localStorage.removeItem("refresh_token");
+  delete apiClient.defaults.headers.common["Authorization"];
+  window.location.href = "/"; // Redireciona para a página inicial ou outra página de sua escolha
+};
+export const Atualizar = async () => {
+  localStorage.removeItem("access_token");
+  localStorage.removeItem("token");
+  localStorage.removeItem("refresh_token");
+  delete apiClient.defaults.headers.common["Authorization"];
+  window.location.href = "/"; // Redireciona para a página inicial ou outra página de sua escolha
+};
+
 export default apiClient;

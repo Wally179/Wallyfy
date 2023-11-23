@@ -40,6 +40,7 @@ export default function Home() {
           <Route path="/trend" element={<Trend />} />
           <Route path="/player" element={<Player />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </Router>
