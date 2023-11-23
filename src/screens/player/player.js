@@ -14,20 +14,20 @@ export default function Player() {
   const [currentTrack, setCurrentTrack] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
-    if (location.state) {
+    if (location.state !== null) {
       apiClient
         .get("playlists/" + location.state?.id + "/tracks")
         .then((res) => {
           setTracks(res.data.items);
           setCurrentTrack(res.data?.items[0]?.track);
         });
+    } else {
     }
   }, [location.state]);
 
   useEffect(() => {
     setCurrentTrack(tracks[currentIndex]?.track);
   }, [currentIndex, tracks]);
-  console.log(tracks);
   return (
     <div className="screen-container flex">
       <div className="left-player-body">

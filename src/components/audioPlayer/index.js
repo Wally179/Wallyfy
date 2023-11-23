@@ -39,35 +39,55 @@ export default function AudioPLayer({
   useEffect(() => {
     if (audioRef.current.src) {
       if (isPlaying) {
-        audioRef.current.play();
-        startTimer();
+        try {
+          audioRef.current.play().catch((error) => {
+            // Trate o erro de reprodução aqui
+            console.error("Ocorreu um erro ao reproduzir o áudio:", error);
+          });
+          startTimer();
+        } catch (error) {
+          console.error("Ocorreu um erro ao reproduzir o áudio:", error);
+        }
       } else {
         clearInterval(intervalRef.current);
         audioRef.current.pause();
       }
     } else {
       if (isPlaying) {
-        audioRef.current = new Audio(audioSrc);
-        audioRef.current.play();
-        startTimer();
+        try {
+          audioRef.current = new Audio(audioSrc);
+          audioRef.current.play().catch((error) => {
+            // Trate o erro de reprodução aqui
+            console.error("Ocorreu um erro ao reproduzir o áudio:", error);
+          });
+          startTimer();
+        } catch (error) {
+          console.error("Ocorreu um erro ao reproduzir o áudio:", error);
+        }
       } else {
         clearInterval(intervalRef.current);
         audioRef.current.pause();
       }
     }
   }, [isPlaying, audioSrc]);
-  console.log(audioRef);
 
   useEffect(() => {
     audioRef.current.pause();
+    clearInterval(intervalRef.current);
     audioRef.current = new Audio(audioSrc);
-
     setTrackProgress(audioRef.current.currentTime);
 
     if (isReady.current) {
-      audioRef.current.play();
-      setIsPlaying(true);
-      startTimer();
+      try {
+        audioRef.current.play().catch((error) => {
+          // Trate o erro de reprodução aqui
+          console.error("Ocorreu um erro ao reproduzir o áudio:", error);
+        });
+        setIsPlaying(true);
+        startTimer();
+      } catch (error) {
+        console.error("Ocorreu um erro ao reproduzir o áudio:", error);
+      }
     } else {
       isReady.current = true;
     }
