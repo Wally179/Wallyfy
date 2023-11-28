@@ -42,9 +42,15 @@ export default function AudioPLayer({
         try {
           audioRef.current.play().catch((error) => {
             // Trate o erro de reprodução aqui
-            console.error("Ocorreu um erro ao reproduzir o áudio:", error);
+
+            console.error(
+              "Ocorreu um erro ao reproduzir o áudio:",
+              error,
+              audioRef.current
+            );
           });
           startTimer();
+          console.log(audioRef.current);
         } catch (error) {
           console.error("Ocorreu um erro ao reproduzir o áudio:", error);
         }
@@ -61,6 +67,7 @@ export default function AudioPLayer({
             console.error("Ocorreu um erro ao reproduzir o áudio:", error);
           });
           startTimer();
+          console.log(audioRef.current);
         } catch (error) {
           console.error("Ocorreu um erro ao reproduzir o áudio:", error);
         }
@@ -119,7 +126,7 @@ export default function AudioPLayer({
     artists.push(artist.name);
   });
   return (
-    <div className="player-body flex">
+    <div className="player-body">
       <div className="player-left-body">
         <ProgressCircle
           percentage={currentPercentage}

@@ -1,6 +1,5 @@
 {
   "name": "wallyfy",
-  "homepage": "https://wally179.github.io/Wallyfy/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

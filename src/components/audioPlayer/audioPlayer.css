@@ -1,15 +1,29 @@
 .player-body {
-  width: 100%;
-  height: 40%;
-  margin: 3% 0%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-flow: row;
 }
-
+@media only screen and (max-width: 855px) {
+  .player-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: 90vw;
+  }
+  .player-left-body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+}
 .player-left-body {
-  width: 37%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .player-right-body {
-  width: 63%;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;

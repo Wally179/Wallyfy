@@ -18,3 +18,8 @@
   z-index: -1;
   top: 20px;
 }
+@media only screen and (max-width: 855px) {
+  .albumImage {
+    width: 40%;
+  }
+}
